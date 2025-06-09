@@ -21,8 +21,6 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
-            System.out.println("Validation error caught in GlobalExceptionHandler!");
-
         Map<String, String> errors = new HashMap<>();
 
         ex.getBindingResult().getAllErrors().forEach(error -> {
@@ -37,8 +35,6 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<?> handleValidationException(ConstraintViolationException ex) {
-            System.out.println("Validation error caught in GlobalExceptionHandler!    32222222222");
-
         Map<String, String> errors = ex.getConstraintViolations().stream()
             .collect(Collectors.toMap(
                 v -> v.getPropertyPath().toString(),
