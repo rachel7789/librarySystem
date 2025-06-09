@@ -3,6 +3,13 @@ package com.example.userService.controller;
 import com.example.userService.model.User;
 import com.example.userService.service.UserService;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+
+
+
+
 
 import java.util.List;
 
@@ -22,8 +29,11 @@ public class UserController {
     }
 
     @PostMapping
-    public User create(@RequestBody User user) {
-        return userService.saveUser(user);
+    public ResponseEntity<User> create(@RequestBody @Valid User user) {
+        User savedUser = userService.saveUser(user);
+        return ResponseEntity
+            .status(HttpStatus.CREATED)
+            .body(savedUser);
     }
 
     @DeleteMapping("/{id}")
