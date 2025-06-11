@@ -8,6 +8,8 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
+import com.example.userService.validation.ValidId;
+
 
 
 
@@ -17,6 +19,7 @@ public class User {
 
     @Id
     @Column(length = 9, unique = true)
+    @ValidId
 //    @Pattern(regexp = "\\d{9}", message = "ID must be exactly 9 digits")
     private String id; // ת"ז
 
