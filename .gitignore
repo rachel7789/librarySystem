@@ -1,0 +1,25 @@
+# כל תיקיית target בכל תת־פרויקט
+**/target/
+
+# קבצי לוג זמניים
+**/*.log
+
+# קבצי קימפול (class)
+**/*.class
+
+# קבצי build של IDEs
+*.iml
+.idea/
+*.ipr
+*.iws
+
+# קונפיגורציות של VSCode
+.vscode/
+
+# קבצים של מערכת
+.DS_Store
+Thumbs.db
+
+# קבצי output של Maven/Gradle
+build/
+out/
