@@ -31,4 +31,41 @@ public class User {
         min = 10, max = 100,
         message= "Address should have a length between 10 and 100 characters.")
     private String address;
+
+	public Object map(Object object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getPhone() {
+		return phone;
+	}
+	
+	public String getAddress() {
+		return address;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	
+	public void setAddress(String address) {
+		this.address = address;
+	}
 }
